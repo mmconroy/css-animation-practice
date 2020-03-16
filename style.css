@@ -1,97 +1,78 @@
-.box--top-left {
+.box {
   width: 100px;
   height: 100px;
+  position: absolute;
+  animation-duration: 4s;
+  animation-delay: 1s;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-in-out;
+}
+
+.box:hover {
+  transition: 0.4s linear;
+  border: 2px solid white;
+}
+
+.box-TopLeft {
   top: 0;
   left: 0;
   background-color: lightcoral;
-  position: absolute;
-  animation-duration: 4s;
-  animation-delay: 1s;
-  animation-fill-mode: forwards;
-  animation-timing-function: ease-in-out;
-  animation-name: RotateCenter;
-  border: solid 0px #ffffff;
-  transition: border-width 0.2s linear;
+  animation-name: TopLeft;
 }
 
-.box--top-right {
-  width: 100px;
-  height: 100px;
+.box-TopRight {
   top: 0;
   right: 0;
   background-color: lightskyblue;
-  position: absolute;
-  animation-duration: 4s;
-  animation-delay: 1s;
-  animation-fill-mode: forwards;
-  animation-timing-function: ease-in-out;
-  animation-name: RotateCenter;
-  border: solid 0px #ffffff;
-  transition: border-width 0.2s linear;
+  animation-name: TopRight;
 }
 
-.box--bottom-left {
-  width: 100px;
-  height: 100px;
-  top: 100%;
+.box-BottomLeft {
+  bottom: 0;
   left: 0;
   background-color: lightgreen;
-  position: absolute;
-  animation-duration: 4s;
-  animation-delay: 1s;
-  animation-fill-mode: forwards;
-  animation-timing-function: ease-in-out;
-  animation-name: RotateCenter;
-  border: solid 0px #ffffff;
-  transition: border-width 0.2s linear;
+  animation-name: BottomLeft;
 }
 
-.box--bottom-right {
-  width: 100px;
-  height: 100px;
-  top: 100%;
+.box-BottomRight {
+  bottom: 0;
   right: 0;
   background-color: lightgoldenrodyellow;
-  position: absolute;
-  animation-duration: 4s;
-  animation-delay: 1s;
-  animation-fill-mode: forwards;
-  animation-timing-function: ease-in-out;
-  animation-name: RotateCenter;
-  border: solid 0px #ffffff;
-  transition: border-width 0.2s linear;
+  animation-name: BottomRight;
 }
 
-.box--top-left:hover {
-  border-width: 1px;
-}
-
-.box--top-right:hover {
-  border-width: 1px;
-}
-
-.box--bottom-left:hover {
-  border-width: 1px;
-}
-
-.box--bottom-right:hover {
-  border-width: 1px;
-}
-
-@keyframes RotateCenter {
-  0% {
-    transform: rotate(0deg);
-  }
-  75% {
-    border-radius: 50%;
-    transform: rotate(360deg);
-  }
+@keyframes TopLeft {
   100% {
-    transform: rotate(270deg);
     background-color: black;
-    border-radius: 100%;
+    border-radius: 0 0 100px 0;
+    top: 50%;
+    left: 50%;
+  }
+}
+
+@keyframes TopRight {
+  100% {
+    background-color: black;
+    border-radius: 0 0 0 100px;
     top: 50%;
     right: 50%;
+  }
+}
+
+@keyframes BottomLeft {
+  100% {
+    background-color: black;
+    border-radius: 0 100px 0 0;
+    bottom: 50%;
     left: 50%;
+  }
+}
+
+@keyframes BottomRight {
+  100% {
+    background-color: black;
+    border-radius: 100px 0 0 0;
+    bottom: 50%;
+    right: 50%;
   }
 }
